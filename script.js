@@ -8,3 +8,4 @@ let adaptive = true;
 console.log(typeof title);
 console.log(typeof FullPrice);
 console.log(typeof adaptive);
+console.log(screens.length)
