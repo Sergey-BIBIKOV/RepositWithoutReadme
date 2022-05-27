@@ -5,4 +5,6 @@ let rollback = 99;
 let FullPrice = 100000n;
 let adaptive = true;
 
-console.log(title);
+console.log(typeof title);
+console.log(typeof FullPrice);
+console.log(typeof adaptive);
