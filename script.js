@@ -1,3 +1,4 @@
+'use strict'
 let title = prompt('Как называется ваш проект');
 let screens = prompt('Простые, Cложные, Интерактивные');
 let screenPrice = parseInt(prompt('Сколько будет стоить данная работа'));
@@ -11,19 +12,26 @@ let FullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(FullPrice - FullPrice * (rollback / 100));
 console.log(servicePercentPrice);
 
-switch (true) {
-    case (FullPrice >= 30000):
-        console.log("Даем скидку в 10 %")
-        break;
-    case (FullPrice >= 15000 && FullPrice < 30000):
-        console.log("Даем скидку в 5 %")
-        break;
-    case (FullPrice > 0 && FullPrice < 15000):
-        console.log("Скидка не предусмотрена")
-        break;
-    case (FullPrice <= 0):
-        console.log("Что то пошло не так")
-        break;
-    default:
-        break;
+const showTypeOf = function (variable) {
+    console.log(variable, typeof variable);
 }
+
+const getRollbackMessage = function (price) {
+    if (price >= 30000) {
+        return 'Даем скидку в 10';
+    } else if (price >= 15000 && price < 30000) {
+        return 'Даем скидку в 5';
+    } else if (price > 0 && price < 15000) {
+        return 'Скидка не предусмотрена'
+    } else (price <= 0); {
+        return "Что то пошло не так";
+    }
+}
+
+getRollbackMessage();
+
+showTypeOf(title);
+showTypeOf(screenPrice);
+showTypeOf(adaptive);
+
+console.log(getRollbackMessage(FullPrice));
