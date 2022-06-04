@@ -12,7 +12,22 @@ let FullPrice = screenPrice + servicePrice1 + servicePrice2;
 let servicePercentPrice = Math.ceil(FullPrice - FullPrice * (rollback / 100));
 console.log(servicePercentPrice);
 
-const showTypeOf = function (variable) {
+const getAllServicePrices = function (a, b) {
+    return a + b;
+}
+let sum = getAllServicePrices(servicePrice1, servicePrice2)
+
+
+
+
+
+
+
+
+
+
+
+/*const showTypeOf = function (variable) {
     console.log(variable, typeof variable);
 }
 
@@ -35,3 +50,4 @@ showTypeOf(screenPrice);
 showTypeOf(adaptive);
 
 console.log(getRollbackMessage(FullPrice));
+*/
