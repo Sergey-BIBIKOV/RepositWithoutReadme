@@ -8,26 +8,28 @@ let service1 = prompt('Какой дополнительный тип услуг
 let servicePrice1 = parseInt(prompt('Сколько это будет стоить?'));
 let service2 = prompt('Какой дополнительный тип услуги нужен?');
 let servicePrice2 = parseInt(prompt('Сколько это будет стоить?'));
-let FullPrice = screenPrice + servicePrice1 + servicePrice2;
-let servicePercentPrice = Math.ceil(FullPrice - FullPrice * (rollback / 100));
+let fullPrice = screenPrice + servicePrice1 + servicePrice2;
+let servicePercentPrice = Math.ceil(fullPrice - fullPrice * (rollback / 100));
 console.log(servicePercentPrice);
 
 const getAllServicePrices = function (a, b) {
     return a + b;
 }
-let sum = getAllServicePrices(servicePrice1, servicePrice2)
 
+function getFullPrice(a, b) {
+    return a + b
+}
 
+const getTitle = function (str) {
+    if (!str) return str;
+    return str[0].toUpperCase() + str.slice(1);
+}
 
+const getServicePercentPrices = function (a, b) {
+    return a - a * b / 100
+}
 
-
-
-
-
-
-
-
-/*const showTypeOf = function (variable) {
+const showTypeOf = function (variable) {
     console.log(variable, typeof variable);
 }
 
@@ -43,11 +45,24 @@ const getRollbackMessage = function (price) {
     }
 }
 
+servicePercentPrice = getServicePercentPrices(fullPrice, rollback);
+let allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
+fullPrice = getFullPrice(screenPrice, allServicePrices);
+getTitle(title);
 getRollbackMessage();
-
 showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
 
-console.log(getRollbackMessage(FullPrice));
-*/
+
+console.log(getServicePercentPrices(fullPrice, rollback));
+console.log(getAllServicePrices(servicePrice1, servicePrice2));
+console.log(getRollbackMessage());
+console.log(getTitle(title));
+
+
+
+
+
+
+
