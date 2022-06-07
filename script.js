@@ -21,8 +21,9 @@ function getFullPrice(a, b) {
 }
 
 const getTitle = function (str) {
-    if (!str) return str;
-    return str[0].toUpperCase() + str.slice(1);
+    str = str.trim();
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
 }
 
 const getServicePercentPrices = function (a, b) {
@@ -35,9 +36,9 @@ const showTypeOf = function (variable) {
 
 const getRollbackMessage = function (price) {
     if (price >= 30000) {
-        return 'Даем скидку в 10';
+        return 'Даем скидку в 10 %';
     } else if (price >= 15000 && price < 30000) {
-        return 'Даем скидку в 5';
+        return 'Даем скидку в 5 %';
     } else if (price > 0 && price < 15000) {
         return 'Скидка не предусмотрена'
     } else (price <= 0); {
@@ -48,8 +49,10 @@ const getRollbackMessage = function (price) {
 servicePercentPrice = getServicePercentPrices(fullPrice, rollback);
 let allServicePrices = getAllServicePrices(servicePrice1, servicePrice2);
 fullPrice = getFullPrice(screenPrice, allServicePrices);
-getTitle(title);
-getRollbackMessage();
+
+
+title = getTitle(title);
+getRollbackMessage(fullPrice);
 showTypeOf(title);
 showTypeOf(screenPrice);
 showTypeOf(adaptive);
@@ -57,9 +60,8 @@ showTypeOf(adaptive);
 
 console.log(getServicePercentPrices(fullPrice, rollback));
 console.log(getAllServicePrices(servicePrice1, servicePrice2));
-console.log(getRollbackMessage());
+console.log(getRollbackMessage(fullPrice));
 console.log(getTitle(title));
-
 
 
 
