@@ -57,7 +57,7 @@ const showTypeOf = (variable) => {
 }
 
 const getFullPrice = () => {
-    return screenPrice + allServicePrices
+    return +screenPrice + allServicePrices
 }
 
 const getServicePercentPrice = () => {
