@@ -38,5 +38,7 @@ let guessRandomNumber = function (generateNumberFunc) {
     return checkGameInput;
 };
 
+
+
 let game = guessRandomNumber(randomInt(1, 100));
 game();
